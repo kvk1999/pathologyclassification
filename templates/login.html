@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    
+</head>
+<style>
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  background: url('https://files.shapes.inc/f3480cab.png') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-container {
+  padding: 40px;
+  background-color: rgba(14, 222, 14, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  width: 300px;
+}
+.login-container input[type="text"],
+.login-container input[type="password"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #004d00;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+}
+.login-container button:hover {
+  background-color: #003300;
+}
+.login-container a {
+  color: #ddd;
+  text-decoration: none;
+}
+.login-container a:hover {
+  text-decoration: underline;
+}
+</style>
+
+<body>
+
+<div class="login-container">
+    <h2 style="color: #ffffff;">Login</h2>
+    <input type="text" placeholder="Username" id="username" required>
+    <input type="password" placeholder="Password" id="password" required>
+    <button onclick="login()">Login</button>
+    <div><a href="forgot.html">Forgot Password?</a> | <a href="signup.html">Signup</a></div>
+</div>
+<script>
+
+function login() {
+  var username = document.getElementById('username').value;
+  var password = document.getElementById('password').value;
+  
+  // Example check, should be replaced with server-side logic
+  if (username === 'admin' && password === 'admin') {
+      alert('Login successful');
+  } else {
+      alert('Invalid username or password');
+  }
+}
+
+</script>
+
+
+</body>
+</html>
