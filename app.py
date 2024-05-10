@@ -28,12 +28,23 @@ def payment():
 
 @app.route('/pathorepo')
 def pathorepo():
-     return render_template("Pathorepo.html")
+     return render_template("pathorepo.html")
  
  
 @app.route('/bookanappointment')
 def bookanappointment():
     return render_template("bookanappointment.html")
+
+
+@app.route('/forgot')
+def forgot():
+    return render_template("forgot.html")
+
+
+
+@app.route('/signup')
+def signup():
+    return render_template("signup.html")
 
 
 

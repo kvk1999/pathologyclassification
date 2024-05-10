@@ -79,7 +79,7 @@
                   <a class="nav-link" href="/buy"> Online Buy </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/Bookanappointment">Book An Appointment</a>
+                  <a class="nav-link" href="/bookanappointment">Book An Appointment</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="/pathorepo">Pathology Report</a>
@@ -116,7 +116,7 @@
               <div class="row">
                 <div class="col-md-4">
                   <div class="img-box">
-                    <img src="images/medicine.png" alt="">
+                    <img src="{{ url_for('static', filename='images/medicine.png') }}" alt="medicine">
                   </div>
                 </div>
                 <div class="col-md-8">
@@ -381,7 +381,7 @@
         </div>
         <div class="col-lg-7 col-md-5">
           <div class="img-box">
-            <img src="images/medicines.jpg" alt="">
+            <img src="{{ url_for('static', filename='images/medicines.jpg') }}" alt="medicines">
           </div>
         </div>
       </div>
