@@ -33,7 +33,7 @@ def pathorepo():
  
 @app.route('/bookanappointment')
 def bookanappointment():
-    return render_template("bookanappointment.html")
+    return render_template("Bookanappointment.html")
 
 
 @app.route('/forgot')
