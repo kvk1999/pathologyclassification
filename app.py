@@ -47,7 +47,7 @@ def forgot():
 
 @app.route('/signup')
 def signup():
-    return render_template("signup.html")
+    return render_template("Signup.html")
 
 
 
