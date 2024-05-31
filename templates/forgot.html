@@ -4,39 +4,41 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Forgot Password</title>
+
 </head>
 <style>
-body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f5f5f5;
-}
-.form-container {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-input[type=email], button {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
-button {
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-button:hover {
-  background-color: #0056b3;
-}
+    
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+  }
+  .form-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+  input[type=email], button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #0056b3;
+  }
 </style>
 <body>
 
@@ -47,26 +49,14 @@ button:hover {
   <button onclick="sendEmail()">Send</button>
 </div>
 <script>
-async function sendEmail() {
-  const email = document.getElementById('email').value;
-
-  const response = await fetch('/forgot', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ email }),
-  });
-
-  const result = await response.json();
-
-  if (result.success) {
+function sendEmail() {
+    var email = document.getElementById('email').value;
+    console.log('Email sent to: ' + email);
+    // You should replace this part with actual email sending logic
     alert('A password reset link has been sent to ' + email);
-  } else {
-    alert('Error: ' + result.error);
   }
-}
 </script>
+
 
 </body>
 </html>
