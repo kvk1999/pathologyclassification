@@ -10,6 +10,9 @@ def home():
 def login():
     return render_template("login.html")
 
+@app.route('/chat')
+def chat():
+    return render_template("chat.html")
 
 @app.route('/about')
 def about():
@@ -33,7 +36,7 @@ def pathorepo():
  
 @app.route('/bookanappointment')
 def bookanappointment():
-    return render_template("Bookanappointment.html")
+    return render_template("bookanappointment.html")
 
 
 @app.route('/forgot')
@@ -44,7 +47,7 @@ def forgot():
 
 @app.route('/signup')
 def signup():
-    return render_template("Signup.html")
+    return render_template("signup.html")
 
 
 
