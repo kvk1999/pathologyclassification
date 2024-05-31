@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    
 </head>
 <style>
-
 body, html {
   height: 100%;
   margin: 0;
@@ -67,22 +65,30 @@ body, html {
     <button onclick="login()">Login</button>
     <div><a href="/forgot">Forgot Password?</a> | <a href="/signup">Signup</a></div>
 </div>
-<script>
 
-function login() {
-  var username = document.getElementById('username').value;
-  var password = document.getElementById('password').value;
-  
-  // Example check, should be replaced with server-side logic
-  if (username === 'admin' && password === 'admin') {
-      alert('Login successful');
+<script>
+async function login() {
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+
+  const response = await fetch('/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ username, password }),
+  });
+
+  const result = await response.json();
+
+  if (result.success) {
+    alert('Login successful');
+    window.location.href = '/';
   } else {
-      alert('Invalid username or password');
+    alert('Invalid username or password');
   }
 }
-
 </script>
-
 
 </body>
 </html>
