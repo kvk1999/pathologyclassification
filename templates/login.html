@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <style>
-
 body, html {
   height: 100%;
   margin: 0;
@@ -46,43 +45,37 @@ body, html {
   cursor: pointer;
   font-size: 15px;
 }
-.login-container button: hover {
+.login-container button:hover {
   background-color: #003300;
 }
 .login-container a {
   color: #ddd;
   text-decoration: none;
 }
-.login-container a: hover {
+.login-container a:hover {
   text-decoration: underline;
 }
 </style>
-
 <body>
-
 <div class="login-container">
     <h2 style="color: #ffffff;">Login</h2>
-    <input type="text" placeholder="Username" id="username" required>
-    <input type="password" placeholder="Password" id="password" required>
-    <button onclick="login()">Login</button>
+    <form id="login-form" method="post" action="/login">
+        <input type="text" placeholder="Username" id="username" name="username" required>
+        <input type="password" placeholder="Password" id="password" name="password" required>
+        <button type="submit">Login</button>
+    </form>
     <div><a href="/forgot">Forgot Password?</a> | <a href="/signup">Signup</a></div>
 </div>
 <script>
-
-function login() {
+document.getElementById('login-form').addEventListener('submit', function(event) {
   var username = document.getElementById('username').value;
   var password = document.getElementById('password').value;
-  
-  // Example check, should be replaced with server-side logic
-  if (username === 'admin' && password === 'admin') {
-      alert('Login successful');
-  } else {
-      alert('Invalid username or password');
+
+  if (username === '' || password === '') {
+    alert('Please fill in both fields.');
+    event.preventDefault();  // Prevent form submission
   }
-}
-
+});
 </script>
-
-
 </body>
 </html>
