@@ -102,7 +102,7 @@ def signup():
             return redirect(url_for('signup'))
         finally:
             conn.close()
-    return render_template("signup.html")
+    return render_template("Signup.html")
 
 @app.route('/forgot', methods=['GET', 'POST'])
 def forgot():
