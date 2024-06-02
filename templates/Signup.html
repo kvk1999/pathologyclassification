@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sign Up</title>
-</head>
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  </head>
+  <style>
+    
 body { font-family: Arial, sans-serif; }
 form { width: 300px; margin: auto; }
 .form-group { margin-bottom: 15px; }
@@ -14,10 +15,13 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="date"],
-input[type="number"] { width: 100%; padding: 10px; margin-top: 5px; }
+input[type="number"],
+input[type="submit"] { width: 100%; padding: 10px; margin-top: 5px; }
 input[type="submit"] { background: blue; color: white; padding: 10px 15px; border: none; cursor: pointer; }
 input[type="submit"]:hover { background: darkblue; }
-</style>
+  </style>
+
+
 <body>
 
 <form action="/signup" method="POST">
@@ -63,12 +67,15 @@ input[type="submit"]:hover { background: darkblue; }
   <input type="submit" value="Sign Up">
 </form>
 <script>
+  
   document.forms[0].onsubmit = function(e) {
     const password = document.getElementById('password');
     const confirmPassword = document.getElementById('confirm-password');
     if (password.value !== confirmPassword.value) {
       e.preventDefault(); // Prevent form submission
       alert('Passwords do not match!');
+    } else {
+      alert('Signed up successfully!');
     }
   };
 </script>

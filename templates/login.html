@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <style>
+  
 body, html {
   height: 100%;
   margin: 0;
@@ -56,6 +57,7 @@ body, html {
   text-decoration: underline;
 }
 </style>
+
 <body>
 <div class="login-container">
     <h2 style="color: #ffffff;">Login</h2>
@@ -67,6 +69,7 @@ body, html {
     <div><a href="/forgot">Forgot Password?</a> | <a href="/signup">Signup</a></div>
 </div>
 <script>
+  
 document.getElementById('login-form').addEventListener('submit', function(event) {
   var username = document.getElementById('username').value;
   var password = document.getElementById('password').value;
@@ -74,8 +77,11 @@ document.getElementById('login-form').addEventListener('submit', function(event)
   if (username === '' || password === '') {
     alert('Please fill in both fields.');
     event.preventDefault();  // Prevent form submission
+  } else {
+    alert('Logged in successfully.');
   }
 });
 </script>
+
 </body>
 </html>
