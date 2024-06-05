@@ -43,8 +43,7 @@ Contributions to this project are welcome! If you would like to contribute, plea
 - Make your changes and submit a pull request.
 - Ensure that your code follows the project's coding standards and conventions.
 
-## License
-[Include the license under which your project is distributed.]
+pathologyclassification.azurewebsites.net
 
 ## Contact
 For any questions or inquiries about this project, feel free to contact the project owner:
